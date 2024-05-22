@@ -1,10 +1,12 @@
 const router = require('express').Router();
 
-const experience = require('../../models/experience.model')
+const Trabajo = require('../../models/trabajo.model')
 
 router.get('/', async (req, res) => {
     try {
-        const lista = await experience.find()
+
+        const lista = await Trabajo.find()
+        console.log(lista)
         res.json(lista)
     } catch (error) {
         res.json({ fatal: 'Algo va mal' })
